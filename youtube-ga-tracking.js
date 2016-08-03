@@ -37,15 +37,15 @@ function onYouTubeIframeAPIReady(){
 function onPlayerStateChange(event) {
   switch(event.data){
     case 0:
-      ga('send', 'event', 'video', 'ended', event.target.getVideoData().title.toString() + " -- Website titel: " + document.title); 
+      ga('send', 'event', 'video', 'ended', event.target.getVideoData().title.toString()); 
       break;
     case 1:
-      ga('send', 'event', 'video', 'played', event.target.getVideoData().title.toString() + " -- Website titel: " + document.title); 
+      ga('send', 'event', 'video', 'played', event.target.getVideoData().title.toString()); 
       break;
     case 2:
       //get video duration
       var c = event.target.getCurrentTime()/event.target.getDuration()*100;
-      ga('send', 'event', 'video', 'paused', event.target.getVideoData().title.toString() + " -- Website titel: " + document.title, c.toFixed()); 
+      ga('send', 'event', 'video', 'paused', event.target.getVideoData().title.toString()); 
       break;
     default:
       break;
